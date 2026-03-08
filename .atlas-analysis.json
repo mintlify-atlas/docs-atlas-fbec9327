@@ -1,0 +1,146 @@
+{
+  "projectType": "saas",
+  "projectName": "MEP Fault Reporting System",
+  "projectDescription": "Internal IT support ticketing system for managing printer and computer fault reports at Costa Rica's Ministry of Education",
+  "theme": "almond",
+  "primaryColor": "#2c3e50",
+  "lightColor": "#3498db",
+  "darkColor": "#1a252f",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "architecture"
+            ]
+          },
+          {
+            "group": "User Guides",
+            "pages": [
+              "guides/creating-reports",
+              "guides/managing-reports",
+              "guides/report-lifecycle",
+              "guides/email-notifications"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/printer-reports",
+              "features/computer-reports",
+              "features/orbe-integration",
+              "features/autocomplete"
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": [
+              "admin/smtp-configuration",
+              "admin/user-management",
+              "admin/data-management"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "api/overview",
+              "api/authentication"
+            ]
+          },
+          {
+            "group": "Reports",
+            "pages": [
+              "api/reports/create",
+              "api/reports/list",
+              "api/reports/update-status"
+            ]
+          },
+          {
+            "group": "Autocomplete",
+            "pages": [
+              "api/autocomplete/activos",
+              "api/autocomplete/edificios",
+              "api/autocomplete/departamentos",
+              "api/autocomplete/informaticos"
+            ]
+          },
+          {
+            "group": "Utilities",
+            "pages": [
+              "api/utilities/parse-boleta",
+              "api/utilities/informatico-email"
+            ]
+          },
+          {
+            "group": "Status Checks",
+            "pages": [
+              "api/status/create",
+              "api/status/list"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "api/config/smtp"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Development",
+        "groups": [
+          {
+            "group": "Setup",
+            "pages": [
+              "development/installation",
+              "development/environment",
+              "development/running-locally"
+            ]
+          },
+          {
+            "group": "Technical Reference",
+            "pages": [
+              "development/backend-structure",
+              "development/frontend-structure",
+              "development/database-schema",
+              "development/data-models"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Dual-module system for printer and computer fault reporting",
+    "Automated email notifications with Excel attachments",
+    "ORBE HTML ticket parsing and integration",
+    "Smart autocomplete for assets, buildings, departments, and IT staff",
+    "Multi-stage report lifecycle management (reportado, coordinado, en_espera, taller, cerrado)",
+    "MongoDB-based persistent storage",
+    "Real-time status tracking and history"
+  ],
+  "publicApiSurface": [
+    "POST /api/reports - Create new fault report",
+    "GET /api/reports - List all reports",
+    "PATCH /api/reports/{id}/estado - Update report status",
+    "GET /api/autocomplete/activos - Asset autocomplete",
+    "GET /api/autocomplete/edificios - Building autocomplete",
+    "GET /api/autocomplete/departamentos - Department autocomplete",
+    "GET /api/autocomplete/informaticos - IT staff autocomplete",
+    "GET /api/informatico/email/{nombre} - Get IT staff email",
+    "POST /api/parse-boleta - Parse ORBE HTML ticket",
+    "POST /api/smtp/configure - Configure SMTP settings",
+    "POST /api/status - Create status check",
+    "GET /api/status - List status checks"
+  ]
+}
